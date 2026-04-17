@@ -38,7 +38,7 @@ export function LiquidTabBar({ state, descriptors, navigation }: BottomTabBarPro
               testID={options.tabBarTestID}
               onPress={onPress}
               onLongPress={onLongPress}
-              style={styles.tabItem}
+              style={[styles.tabItem, isFocused && styles.tabItemActive]}
             >
               {options.tabBarIcon ? options.tabBarIcon({ focused: isFocused, color: isFocused ? '#007AFF' : '#8e8e93', size: 24 }) : null}
             </TouchableOpacity>
@@ -53,29 +53,35 @@ const styles = StyleSheet.create({
   container: {
     position: 'absolute',
     bottom: Platform.OS === 'ios' ? 34 : 24,
-    left: 24,
-    right: 24,
-    height: 64,
-    borderRadius: 32,
-    elevation: 8,
+    left: '10%',
+    width: '80%',
+    height: 70,
+    borderRadius: 35,
+    elevation: 10,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.15,
-    shadowRadius: 12,
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 0.25,
+    shadowRadius: 20,
   },
   glassContainer: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-around',
-    borderRadius: 32,
+    justifyContent: 'space-between',
+    borderRadius: 35,
+    paddingHorizontal: 15,
     overflow: 'hidden',
-    backgroundColor: 'rgba(255, 255, 255, 0.1)', // fallback if glass is very thin
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.2)',
   },
   tabItem: {
     flex: 1,
-    height: '100%',
+    height: 50,
     alignItems: 'center',
     justifyContent: 'center',
+    borderRadius: 25,
   },
+  tabItemActive: {
+    backgroundColor: 'rgba(255, 255, 255, 0.15)',
+  }
 });

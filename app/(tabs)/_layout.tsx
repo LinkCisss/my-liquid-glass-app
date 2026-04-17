@@ -19,27 +19,27 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
+          title: 'Dashboard',
           tabBarIcon: ({ color, focused }) => (
             <Ionicons name={focused ? 'home' : 'home-outline'} size={24} color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="discover"
+        name="stocks"
         options={{
-          title: 'Discover',
+          title: 'Stocks',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'compass' : 'compass-outline'} size={24} color={color} />
+            <Ionicons name={focused ? 'trending-up' : 'trending-up-outline'} size={24} color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="profile"
+        name="notes"
         options={{
-          title: 'Profile',
+          title: 'Notes',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'person' : 'person-outline'} size={24} color={color} />
+            <Ionicons name={focused ? 'journal' : 'journal-outline'} size={24} color={color} />
           ),
         }}
       />
