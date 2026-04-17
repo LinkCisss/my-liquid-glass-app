@@ -1,18 +1,31 @@
 {
   "name": "my-liquid-glass-app",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "expo-router/entry",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "build:web": "expo export",
+    "build:android": "expo run:android",
+    "build:ios": "expo run:ios",
+    "build:apk": "eas build -p android --profile preview"
   },
   "dependencies": {
+    "@expo/ui": "~0.2.0-beta.9",
     "expo": "~54.0.33",
+    "expo-glass-effect": "~0.1.9",
+    "expo-router": "~6.0.23",
     "expo-status-bar": "~3.0.9",
     "react": "19.1.0",
-    "react-native": "0.81.5"
+    "react-dom": "^19.1.0",
+    "react-native": "0.81.5",
+    "react-native-web": "^0.21.0"
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "@types/react": "~19.1.10",
+    "typescript": "~5.9.2"
+  }
 }
